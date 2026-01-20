@@ -1,1 +1,7 @@
 <p>survivors works!</p>
+
+@for (survivor of survivors(); track survivor.id) {
+    <p>{{survivor.nombre}}</p>
+}@empty {
+    <p>NO EXISTEN SUPERVIVIENTES</p>
+}
