@@ -2,10 +2,13 @@ import { Component, inject, Input } from '@angular/core';
 import { BunkerService } from '../../service/bunker-service';
 import { Survivor } from '../../../types';
 import { Observable } from 'rxjs';
+import { SurvivorCard } from "../../survivor-card/survivor-card";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-survivor-detail',
-  imports: [],
+  standalone:true,
+  imports: [ RouterLink],
   templateUrl: './survivor-detail.html',
   styleUrl: './survivor-detail.css',
 })

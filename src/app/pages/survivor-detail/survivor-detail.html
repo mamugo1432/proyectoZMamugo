@@ -1,3 +1,9 @@
-<p>survivor-detail works!</p>
-<p> Survivor id: {{id}}</p>
-<p> Survivor name: {{survivor!.nombre}}</p>
+<div style="border: 5px white solid;">
+    <img src={{survivor?.avatar}} alt="Foto del sobreviviente" style="width: 100px; height: 100px;">
+    <p><strong>Nombre: </strong>{{survivor?.nombre}}</p>
+    <p><strong>Estado: </strong>{{survivor?.estado}}</p>
+    <p><strong>Ubicación: </strong>{{survivor?.ubicacion}}</p>
+    <p><strong>Email: </strong>{{survivor?.email}}</p>
+    <button><a routerLink="/survivors">Back</a></button>
+</div>
+

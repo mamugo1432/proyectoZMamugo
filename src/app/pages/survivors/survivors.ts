@@ -2,10 +2,12 @@ import { Component, inject, signal } from '@angular/core';
 import { Survivor } from '../../../types';
 import { HttpClient } from '@angular/common/http';
 import { BunkerService } from '../../service/bunker-service';
+import { SurvivorCard } from "../../survivor-card/survivor-card";
 
 @Component({
   selector: 'app-survivors',
-  imports: [],
+  imports: [SurvivorCard],
+  standalone:true,
   templateUrl: './survivors.html',
   styleUrl: './survivors.css',
 })
