@@ -17,7 +17,9 @@ export class SurvivorDetail {
   
   private service:BunkerService = inject(BunkerService);
 
-   survivor:Survivor|null = null;
+   survivor:Survivor ={
+    nombre:"", ubicacion:"", avatar:"", email:"", estado:"DESAPARECIDO", id:""
+   };
 
 
    ngOnInit(){

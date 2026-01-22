@@ -23,9 +23,12 @@ export class BunkerService {
 
 
   fetchSurvivors(){
-    this.httpClient.get<Survivor[]>(this.API_URL + "/supervivientes/")
+    this.httpClient.get<Survivor[]>(this.API_URL + "/supervivientes")
     .subscribe({
-      next: survivors => this._survivorsSubject.update(() => survivors)
+      next: survivors => {
+        console.log("Survivors: ", survivors)
+        this._survivorsSubject.set(survivors)
+      }
     })                                          
   }
 
@@ -33,5 +36,17 @@ export class BunkerService {
     return this.httpClient.get<Survivor>(this.API_URL + "/supervivientes/" + idSurvivor);
   }
 
+  addSurvivor(){
+    this.httpClient.post("http://localhost:3000/supervivientes", {
+    "nombre": "Sarah Connor",
+    "rango": "Comandante",
+    "estado": "ESTABLE",
+    "ubicacion": "Ala Norte",
+    "email": "s.connor@resistance.net",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+  }).subscribe({
+    next: () => this.fetchSurvivors()
+  })
+  }
 
 }
