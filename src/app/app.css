@@ -92,3 +92,11 @@
     justify-content: center;
   }
 }
+
+.btn-danger{
+  background-color: aqua;
+}
+
+.btn-primary{
+  background-color: antiquewhite;
+}

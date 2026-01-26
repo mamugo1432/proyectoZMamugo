@@ -1,11 +1,15 @@
 <nav class="navbar-bunker">
-  <h1>Z-0 PROTOCOL</h1>
+  <h1 (click) = "handleKonamiCode()">Z-0 PROTOCOL</h1>
+  @if (resultClicks()) {
+    <p>{{resultClicks()}}</p>
+  }
   <div class="enlaces">
     <a routerLink="/dashboard" routerLinkActive="activo">ESTADO</a>
     <a routerLink="/survivors" routerLinkActive="activo">PERSONAL</a>
     <a routerLink="/inventory" routerLinkActive="activo">ALMACÉN</a>
   </div>
-</nav>
+  <button (click)="changeStyle()" [class]="theme()">CAMBIAR TEMA</button>
+  </nav>
 <main class="pantalla-principal">
   <router-outlet></router-outlet>
 </main>

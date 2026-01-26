@@ -1,5 +1,5 @@
-
-@for (survivor of survivors(); track survivor.id) {
+<input type="text" (input)="filtrerList($event)"/>
+@for (survivor of filtrerSurvivors(); track survivor.id) {
     <app-survivor-card [survivor]="survivor"></app-survivor-card>
 }@empty {
     <p>NO EXISTEN SUPERVIVIENTES</p>
